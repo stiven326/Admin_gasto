@@ -6,4 +6,4 @@ app.listen(3000, ()=> {
     console.log('cree un servidor web')
 })
 
-app.use('/api',router)
+app.use('/api', router)
