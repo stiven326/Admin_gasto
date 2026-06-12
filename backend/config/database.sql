@@ -1,26 +1,42 @@
 CREATE DATABASE gastos;
 
-use gastos;
+USE gastos;
 
-create table categorias(
+CREATE TABLE categorias (
     cat_id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50)
+    nombre VARCHAR(50) NOT NULL
 );
 
-create table transacciones(
-    ts_id int PRIMARY KEY AUTO_INCREMENT,
-    monto DECIMAL(10,2),
-    categoria_id INT,
-    fecha date,
+CREATE TABLE transacciones (
+    ts_id INT PRIMARY KEY AUTO_INCREMENT,
+    monto DECIMAL(10,2) NOT NULL,
+    categoria_id INT NOT NULL,
+    fecha DATE NOT NULL,
 
-    Foreign Key (categoria_id) REFERENCES categorias(cat_id)
+    FOREIGN KEY (categoria_id)
+        REFERENCES categorias(cat_id)
 );
 
-select * from transacciones;
+INSERT INTO categorias (nombre)
+VALUES
+('alimentacion'),
+('salario'),
+('transporte');
 
-insert into categoria(nombre)
-VALUES ('alimentacion'), ('salario'), ('transporte');
-
-insert into transacciones(monto, cat_id, fecha)
-VALUES(1000, 1, '2026-05-26'),
+INSERT INTO transacciones (monto, categoria_id, fecha)
+VALUES
+(1000, 1, '2026-05-26'),
 (10000, 2, '2026-05-26');
+
+SELECT * FROM transacciones;
+
+SELECT * FROM categorias;
+
+SELECT
+    t.ts_id,
+    t.monto,
+    c.nombre AS categoria,
+    t.fecha
+FROM transacciones t
+INNER JOIN categorias c
+    ON t.categoria_id = c.cat_id;
