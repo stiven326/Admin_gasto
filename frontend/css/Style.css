@@ -99,14 +99,8 @@ button{
     align-items: center;
     padding: 14px;
     background: #fafafa;
-    border: 1px solid #e5e7eb;
     border-radius: 10px;
     transition: 0.2s;
-}
-
-.fila:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 3px 10px rgba(0,0,0,.1);
 }
 
 .fila div:nth-child(1){
@@ -124,6 +118,24 @@ button{
     text-align: right;
     color: #6b7280;
     font-size: 13px;
+}
+
+.ingresos{
+    border: 1px solid green;
+}
+
+.gastos{
+    border: 1px solid red;
+}
+
+.gastos:hover{
+    background-color: #c82333;
+    color: white;
+}
+
+.ingresos:hover{
+    background-color: green;
+    color: white;
 }
 
 @media(max-width: 600px){
