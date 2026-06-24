@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Gastos</title>
-  <link rel="stylesheet" href="css/Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Gastos</title>
+    <link rel="stylesheet" href="css/Style.css">
 </head>
+
 <body>
 
-  <div class="box">
-    <h1>Admin Gastos</h1>
+    <div class="box">
 
-    <label>Monto</label>
-    <input type="number">
+        <h1>Administrador de Gastos</h1>
 
-    <label>Fecha</label>
-    <input type="date">
+        <label>Descripción</label>
+        <input type="text" id="descripcion">
 
-    <label>Categoría</label>
-    <select>
-      <option>Arriendo</option>
-      <option>Comida</option>
-      <option>Servicios</option>
-      <option>Transporte</option>
-      <option>Otros</option>
-    </select>
+        <label>Monto</label>
+        <input type="number" id="monto">
 
-  <div class="botones">
-            <button class="sumar">Ingreso</button>
-            <button class="restar">Gasto</button>
+        <label>Fecha</label>
+        <input type="date" id="fecha">
+
+        <label>Categoría</label>
+
+        <select id="categoria">
+            <option value="1">Alimentacion</option>
+            <option value="2">Salario</option>
+            <option value="3">Transporte</option>
+            <option value="4">Servicios</option>
+            <option value="5">Arriendo</option>
+            <option value="6">Salud</option>
+            <option value="7">Educacion</option>
+            <option value="8">Entretenimiento</option>
+            <option value="9">Otros</option>
+        </select>
+
+        <div class="botones">
+
+            <button
+                class="sumar"
+                id="btnIngreso">
+                Ingreso
+            </button>
+
+            <button
+                class="restar"
+                id="btnGasto">
+                Gasto
+            </button>
+
         </div>
 
-        <h1>Transacciones</h1>
+        <h2>Transacciones</h2>
+
         <div id="transacciones"></div>
-        </div>
-      </div>
-<script src="js/app.js"></script>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
 </body>
 </html>

@@ -1,11 +1,15 @@
-const express = require('express')
-const app = express()
-const router = require('./routes/router')
-const cors = require('cors')
+const express = require('express');
+const cors = require('cors');
 
-app.use(cors())
-app.listen(3000, ()=> {
-    console.log('cree un servidor web')
-})
+const router = require('./routes/router');
 
-app.use('/api', router)
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use('/api', router);
+
+app.listen(3000, () => {
+    console.log('Servidor ejecutándose en puerto 3000');
+});
