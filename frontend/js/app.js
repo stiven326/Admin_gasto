@@ -65,48 +65,36 @@ btnGasto.addEventListener(
 );
 
 function guardarMovimiento(tipo) {
-
     fetch(
         'http://localhost:3000/api/gastos',
         {
-
             method: 'POST',
-
             headers: {
                 'Content-Type': 'application/json'
             },
-
             body: JSON.stringify({
-
                 descripcion:
                     descripcion.value,
-
                 monto:
                     monto.value,
-
                 fecha:
                     fecha.value,
-
                 categoria_id:
                     categoria.value,
-
                 tipo:
                     tipo
             })
         }
     )
 
-    .then(res => res.json())
-
-    .then(() => {
-
+.then(res => res.json())
+.then(() => {
         descripcion.value = '';
         monto.value = '';
         fecha.value = '';
         categoria.value = '';
         cargarDatos();
     })
-
     .catch(error => {
         console.error(error);
     });

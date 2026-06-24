@@ -1,5 +1,4 @@
 const db = require('../config/db');
-
 class GastoModel {
 
     static async obtenerGastos() {
